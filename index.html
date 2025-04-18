@@ -3,35 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Into the Multiverse</title>
+  <title>Boba Bliss Café</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #111; color: #eee; }
-    header, footer { background-color: #222; padding: 1em; text-align: center; }
-    nav { background-color: #333; padding: 0.5em; text-align: center; }
-    nav a { color: #fff; margin: 0 1em; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    .wrapper { max-width: 1000px; margin: auto; padding: 1em; }
-    img { max-width: 100%; height: auto; border-radius: 10px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background: #ff6f61;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .nav-toggle {
+      background: #ff6f61;
+      color: white;
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav {
+      background: #ffa08a;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 1rem;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background: #ff8673;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      background: #ff6f61;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Into the Multiverse</h1>
-    <p>Exploring the infinite realities of our imagination</p>
+    <h1>Boba Bliss Café</h1>
+    <p>Your daily dose of happiness in a cup!</p>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="characters.html">Characters</a>
-    <a href="reviews.html">Reviews</a>
+
+  <div class="nav-toggle" onclick="toggleMenu()">☰ Menu</div>
+  <nav id="mainNav">
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
   </nav>
-  <div class="wrapper">
-    <h2>About the Movie</h2>
-    <img src="https://images.unsplash.com/photo-1587614382346-ac5ce068fe85?auto=format&fit=crop&w=1950&q=80" alt="Multiverse poster">
-    <p><strong>Into the Multiverse</strong> is a sci-fi adventure exploring the consequences of parallel dimensions colliding. Directed by Jane Doe, this 2025 epic follows a young physicist, Kira, as she navigates the tangled web of universes to prevent cosmic destruction.</p>
-    <p>Genre: Science Fiction | Year: 2025 | Director: Jane Doe</p>
+
+  <div class="wrapper" id="menu">
+    <h2>Popular Drinks</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1589466747681-aca5882122ec" alt="Classic Milk Tea">
+        <h3>Classic Milk Tea</h3>
+        <p>$4.50</p>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1621326640902-d2f36f287512" alt="Taro Bubble Tea">
+        <h3>Taro Bubble Tea</h3>
+        <p>$5.00</p>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1624144897351-49dfbb836184" alt="Strawberry Matcha">
+        <h3>Strawberry Matcha</h3>
+        <p>$5.25</p>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1599848716647-ecf28972ba96" alt="Brown Sugar Boba">
+        <h3>Brown Sugar Boba</h3>
+        <p>$5.50</p>
+      </div>
+    </div>
   </div>
+
   <footer>
-    <p>&copy; 2025 Into the Multiverse</p>
+    <p>&copy; 2025 Boba Bliss Café | Drink happy. Live happy.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mainNav');
+      nav.classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
